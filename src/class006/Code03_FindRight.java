@@ -60,4 +60,20 @@ public class Code03_FindRight {
 		return ans;
 	}
 
+    public static int findRight2(int[] arr, int num) {
+        int l = 0;
+        int r = arr.length - 1;
+        int ans = -1;
+        while (l <= r){
+            int m = l + ((r - l) >> 1);
+            if (arr[m] <= num){
+                ans = m;
+                l = m + 1;
+            }else{
+                r = m - 1;
+            }
+        }
+        return ans;
+    }
+
 }
